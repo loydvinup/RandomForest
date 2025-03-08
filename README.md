@@ -1,58 +1,37 @@
 Customer Churn Prediction - Random Forest Classifier
-Overview
+Dataset Overview
 
-This project implements a Random Forest Classifier to predict customer churn using a dataset of telecom customers. It includes data preprocessing, exploratory data analysis (EDA), model training, evaluation, and hyperparameter tuning.
-Dataset
+This project uses the Customer Churn dataset (customer_churn.csv), which contains telecom customer details. The dataset includes information about contract types, service usage, and billing details to predict whether a customer will churn.
+Key Features:
 
-📂 Dataset Name: customer_churn.csv
-📊 Features: Various customer-related attributes, such as:
+    Tenure – Duration of customer subscription
+    TotalCharges – Total amount charged
+    TechSupport, InternetService, Contract Type – Service-related features
+    Churn (Target Variable) – 1 = Churned, 0 = Retained
 
-    tenure: How long a customer has stayed
-    TotalCharges: Total amount charged
-    TechSupport, InternetService, etc.
-    🎯 Target Variable: Churn (1 = Churned, 0 = Retained)
-    📉 Goal: Predict if a customer will churn based on their service usage and contract details.
-
-Project Workflow
-
+Approach Used
 1️⃣ Data Preprocessing
 
-    Handling missing values (TotalCharges)
-    Label encoding categorical variables
-    Dropping irrelevant features (customerID)
-    2️⃣ Exploratory Data Analysis (EDA)
-    Checking feature distributions
-    Identifying outliers with box plots
-    Visualizing churn distribution
-    3️⃣ Model Training & Evaluation
-    Implementing RandomForestClassifier
-    Hyperparameter tuning (n_estimators)
-    Evaluating with accuracy, confusion matrix, and classification report
-    4️⃣ Visualization & Results
-    Plotting model performance
-    Heatmap of confusion matrix
+    Handled missing values (TotalCharges) by imputing the mean
+    Encoded categorical variables using Label Encoding
+    Dropped irrelevant columns like customerID
 
-Installation & Usage
+2️⃣ Exploratory Data Analysis (EDA)
 
-    Clone the repository
+    Checked data distributions and outliers
+    Visualized feature distributions and churn rates using seaborn
 
-git clone https://github.com/your-username/customer-churn-prediction.git
-cd customer-churn-prediction
+3️⃣ Model Training - Random Forest Classifier
 
-Install dependencies
+    Implemented RandomForestClassifier from scikit-learn
+    Used train-test split (70-30) for model training
+    Tuned n_estimators (number of trees) to optimize performance
 
-    pip install -r requirements.txt
+4️⃣ Evaluation & Results
 
-    Run the notebook
-        Open RF.ipynb in Jupyter Notebook or Google Colab
-        Execute all cells to train and evaluate the model
+    Measured accuracy, precision, recall, and F1-score
+    Visualized performance using a confusion matrix heatmap
 
-Results
-
-📊 Model performance was evaluated using:
-✔ Accuracy Score
-✔ Confusion Matrix
-✔ Precision, Recall, and F1-Score
 Technologies Used
 
 🚀 Python, Pandas, NumPy, Matplotlib, Seaborn, Scikit-learn
